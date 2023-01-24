@@ -7,11 +7,17 @@ export default function Home() {
     <>
       <Head>
         <title>Swiss Knife for Dojo</title>
-        <meta name="description" content="A toolset for Dojo NFt collection" />
+        <meta name="description" content="A toolkit for Dojo NFt collection" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Box>home</Box>
+      <Box sx={{ mt: 4, textAlign: "center" }}>
+        Welcome to Swiss knife for nfts!
+      </Box>
+
+      <Box sx={{ mt: 4, textAlign: "center" }}>
+        This is a toolkit for Dojo NFt collection.
+      </Box>
     </>
   );
 }
