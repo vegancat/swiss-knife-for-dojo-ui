@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Box } from "@mui/material";
 import { loadImage, createCanvas, Canvas } from "canvas";
 import { Button } from "@mui/material";
-import Image from "next/image";
+import NextImage from "next/image";
 import useDownloader from "react-use-downloader";
 import { useAvailableNftsContext } from "../contexts/AvailableNftsProvider";
 import headerTemplate1 from "../public/twitter_header_template_1.png";
@@ -23,22 +23,20 @@ const Banner = (props: Props) => {
     const canvas = createCanvas(1500, 500);
     const ctx = canvas.getContext("2d");
     const template = await loadImage(headerTemplate1.src);
-    console.log(
-      "🚀 ~ file: banner.tsx:25 ~ createBannerHandler ~ template",
-      template
-    );
-    const logoPng = await loadImage(logo.src);
-    const nftImage = await loadImage(nfts[0].imageUrl);
-    console.log(
-      "🚀 ~ file: banner.tsx:26 ~ createBannerHandler ~ nftImage",
-      nftImage
-    );
-    // @ts-ignore
-    nftImage.crossOrigin = "Anonymous";
-
     ctx.drawImage(template, 0, 0, canvas.width, canvas.height);
-    ctx.drawImage(nftImage, 0, 0, 250, 250);
-    ctx.drawImage(logoPng, 1200, 175, 150, 150);
+
+    // const nftImage = new Image();
+    // // await loadImage(nfts[0].imageUrl);
+    // nftImage.crossOrigin = "Anonymous";
+    // nftImage.addEventListener(
+    //   "load",
+    //   function imageReceived() {
+    //     ctx.drawImage(nftImage, 0, 0, 250, 250);
+    //   },
+    //   false
+    // );
+    // nftImage.src = nfts[0].imageUrl;
+
     const imageUrl = canvas.toDataURL();
 
     setCreatedImageUrl(imageUrl);
@@ -48,7 +46,7 @@ const Banner = (props: Props) => {
     <Box>
       <Button onClick={createBannerHandler}>Create Banner</Button>
       {createdImageUrl && (
-        <Image
+        <NextImage
           src={createdImageUrl}
           alt="created Image"
           width={750}
