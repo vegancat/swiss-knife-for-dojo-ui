@@ -24,11 +24,13 @@
     "@solana/wallet-adapter-react-ui": "^0.9.27",
     "@solana/wallet-adapter-wallets": "^0.19.10",
     "@solana/web3.js": "^1.73.0",
+    "canvas": "^2.11.0",
     "framer-motion": "^8.5.2",
     "next": "latest",
     "notistack": "^2.0.8",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "react-use-downloader": "^1.2.1"
   },
   "devDependencies": {
     "@types/node": "latest",
