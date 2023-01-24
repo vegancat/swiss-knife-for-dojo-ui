@@ -58,7 +58,7 @@ export const TweetButton: FC<Props> = (props) => (
       p: "1rem",
     }}
   >
-    <Image src={TwitterIcon} alt="twitter Icon" width={160} height={40} />
+    <Image src={TwitterIcon} alt="twitter Icon" width={40} height={40} />
     <Box textAlign={"center"}>tweet</Box>
   </Box>
 );
