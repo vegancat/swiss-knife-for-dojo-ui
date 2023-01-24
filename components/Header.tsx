@@ -68,6 +68,7 @@ function ResponsiveAppBar() {
                   alt="logo"
                   width={65}
                   height={65}
+                  priority
                 />
               </IconButton>
             </Link>

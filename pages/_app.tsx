@@ -18,6 +18,7 @@ import {
 import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
 import { clusterApiUrl } from "@solana/web3.js";
 import Layout from "../components/Layout";
+import AvailableNftsProvider from "../contexts/AvailableNftsProvider";
 import "../styles/globals.css";
 
 // Default styles that can be overridden by your app
@@ -36,7 +37,10 @@ export default function MyApp(props: MyAppProps) {
 
   // You can also provide a custom RPC endpoint.
   const endpoint = useMemo(
-    () => process.env.SOLANA_DEVNET_RPC || clusterApiUrl(network),
+    () =>
+      process.env.SOLANA_DEVNET_RPC ||
+      "https://withered-wider-research.solana-mainnet.quiknode.pro/" ||
+      clusterApiUrl(network),
     [network]
   );
 
@@ -69,13 +73,15 @@ export default function MyApp(props: MyAppProps) {
       <ConnectionProvider endpoint={endpoint}>
         <WalletProvider wallets={wallets} autoConnect>
           <WalletModalProvider>
-            <ThemeProvider theme={theme}>
-              {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-              <CssBaseline />
-              <Layout>
-                <Component {...pageProps} />
-              </Layout>
-            </ThemeProvider>
+            <AvailableNftsProvider>
+              <ThemeProvider theme={theme}>
+                {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+                <CssBaseline />
+                <Layout>
+                  <Component {...pageProps} />
+                </Layout>
+              </ThemeProvider>
+            </AvailableNftsProvider>
           </WalletModalProvider>
         </WalletProvider>
       </ConnectionProvider>

@@ -2249,6 +2249,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/lodash@npm:^4.14.191":
+  version: 4.14.191
+  resolution: "@types/lodash@npm:4.14.191"
+  checksum: ba0d5434e10690869f32d5ea49095250157cae502f10d57de0a723fd72229ce6c6a4979576f0f13e0aa9fbe3ce2457bfb9fa7d4ec3d6daba56730a51906d1491
+  languageName: node
+  linkType: hard
+
 "@types/node@npm:*, @types/node@npm:latest":
   version: 18.11.18
   resolution: "@types/node@npm:18.11.18"
@@ -6404,6 +6411,7 @@ __metadata:
     "@solana/wallet-adapter-react-ui": ^0.9.27
     "@solana/wallet-adapter-wallets": ^0.19.10
     "@solana/web3.js": ^1.73.0
+    "@types/lodash": ^4.14.191
     "@types/node": latest
     "@types/react": latest
     "@types/react-dom": latest
@@ -6414,6 +6422,7 @@ __metadata:
     framer-motion: ^8.5.2
     husky: latest
     lint-staged: latest
+    lodash: ^4.17.21
     next: latest
     notistack: ^2.0.8
     pinst: latest
